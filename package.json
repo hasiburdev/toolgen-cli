@@ -1,0 +1,22 @@
+{
+  "name": "toolgen-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --dts-resolve --minify --clean --sourcemap --dts",
+    "lint": "tsc",
+    "dev": "vitest",
+    "test": "vitest run",
+    "ci": "pnpm run lint && pnpm run test && pnpm run build"
+  },
+  "keywords": [],
+  "author": "Hasibur Rahman",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.4",
+    "vitest": "^0.30.1"
+  }
+}
