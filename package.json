@@ -5,11 +5,16 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "toolgen": "./dist/index.js"
+  },
   "private": false,
   "scripts": {
-    "build": "tsup src/index.ts --format cjs --dts-resolve --minify --clean --sourcemap --dts",
+    "copy:asset": "mkdir -p ./dist/template && cp ./src/template/* ./dist/template/",
+    "build": "tsup src/index.ts --format cjs --dts-resolve  --minify --clean --sourcemap --dts && pnpm copy:asset",
     "lint": "tsc",
     "dev": "vitest",
+    "watch": "tsup src/index.ts --watch && copy:asset",
     "test": "vitest run",
     "ci": "pnpm run lint && pnpm run test && pnpm run build",
     "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
@@ -23,5 +28,10 @@
     "tsup": "^6.7.0",
     "typescript": "^5.0.4",
     "vitest": "^0.30.1"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^10.0.1",
+    "conf": "^11.0.1"
   }
 }
