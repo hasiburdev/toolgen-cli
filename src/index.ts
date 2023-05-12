@@ -1,9 +1,8 @@
 #! /usr/bin/env node
-
 import {
   installDependencies,
-  writeConfigFile,
   updatePackageJson,
+  writeConfigFile,
 } from "./scripts";
 
 const main = async () => {

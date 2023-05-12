@@ -3,7 +3,15 @@ import { spawn } from "child_process";
 export const installDependencies = async () => {
   const childProcess = spawn(
     "pnpm",
-    ["add", "-D", "eslint", "prettier", "eslint-config-prettier"],
+    [
+      "add",
+      "-D",
+      "eslint",
+      "prettier",
+      "eslint-config-prettier",
+      "eslint-plugin-prettier",
+      "@trivago/prettier-plugin-sort-imports",
+    ],
     {
       stdio: "inherit",
     },

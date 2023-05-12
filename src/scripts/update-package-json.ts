@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
-import { LINT_COMMAND, FORMAT_COMMAND, LINT_FIX_COMMAND } from "../commands";
+
+import { FORMAT_COMMAND, LINT_COMMAND, LINT_FIX_COMMAND } from "../commands";
 
 export const updatePackageJson = async () => {
   const file = await readFile(join(__dirname, "../../package.json"), "utf-8");
