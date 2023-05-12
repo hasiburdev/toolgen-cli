@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- 277df26: Add import sorting in prettier
+
+## 0.0.4
+
+### Patch Changes
+
 - 1c8416d: Add eslint, prettier config file and package install command
 
 ## 0.0.3
