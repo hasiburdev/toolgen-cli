@@ -12,12 +12,15 @@
   "scripts": {
     "copy:asset": "mkdir -p ./dist/template && cp ./src/template/* ./dist/template/",
     "build": "tsup src/index.ts --format cjs --dts-resolve  --minify --clean --sourcemap --dts && pnpm copy:asset",
-    "lint": "tsc",
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --quiet",
     "dev": "vitest",
     "watch": "tsup src/index.ts --watch && copy:asset",
     "test": "vitest run",
     "ci": "pnpm run lint && pnpm run test && pnpm run build",
-    "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
+    "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish",
+    "start": "ts-node src/index.ts",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --quiet --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,html,scss}\""
   },
   "keywords": [],
   "author": "Hasibur Rahman",
@@ -25,6 +28,10 @@
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
     "@types/node": "^18.16.3",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4",
     "vitest": "^0.30.1"
