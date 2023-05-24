@@ -4,7 +4,7 @@ import { join } from "path";
 import { FORMAT_COMMAND, LINT_COMMAND, LINT_FIX_COMMAND } from "../commands";
 
 export const updatePackageJson = async () => {
-  const file = await readFile(join(__dirname, "../../package.json"), "utf-8");
+  const file = await readFile(join(process.cwd(), "./package.json"), "utf-8");
 
   let packageFile;
   try {

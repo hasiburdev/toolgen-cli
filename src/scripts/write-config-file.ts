@@ -3,11 +3,11 @@ import { join } from "path";
 
 export const writeConfigFile = async () => {
   const eslintConfigFile = await readFile(
-    join(__dirname, "../template/.eslintrc.cjs"),
+    join(__dirname, "./template/.eslintrc.cjs"),
     "utf-8",
   );
   const prettierConfigFile = await readFile(
-    join(__dirname, "../template/prettier.config.cjs"),
+    join(__dirname, "./template/prettier.config.cjs"),
     "utf-8",
   );
 
